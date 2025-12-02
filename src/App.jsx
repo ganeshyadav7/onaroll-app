@@ -1,8 +1,9 @@
 import { useState } from "react";
 
 // ---- CONFIG / IMAGES ----
-const HERO_IMAGE =
-  "https://images.unsplash.com/photo-1529042410759-befb1204b468?auto=format&fit=crop&w=1600&q=80"; // big breakfast
+// Use your local hero image from /public/hero.jpg
+const HERO_IMAGE = "/hero.jpg";
+
 const CATEGORY_IMAGES = {
   breakfast:
     "https://images.unsplash.com/photo-1504753793650-d4a2b783c15e?auto=format&fit=crop&w=1200&q=80",
@@ -150,10 +151,7 @@ function App() {
     const encoded = encodeURIComponent(message);
 
     // Open WhatsApp chat with order text
-    window.open(
-      `https://wa.me/${WHATSAPP_NUMBER}?text=${encoded}`,
-      "_blank"
-    );
+    window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encoded}`, "_blank");
   };
 
   return (
@@ -179,9 +177,30 @@ function App() {
           backdropFilter: "blur(6px)",
         }}
       >
-        <div style={{ fontWeight: "bold", letterSpacing: "0.08em" }}>
-          ON A ROLL
+        {/* brand with logo */}
+        <div
+          style={{
+            display: "flex",
+            alignItems: "center",
+            gap: "10px",
+            fontWeight: "bold",
+            fontSize: "1.1rem",
+            letterSpacing: "0.08em",
+          }}
+        >
+          <img
+            src="/logo-256.png"
+            alt="On A Roll logo"
+            style={{
+              height: "36px",
+              width: "36px",
+              borderRadius: "50%",
+              objectFit: "cover",
+            }}
+          />
+          <span>ON A ROLL</span>
         </div>
+
         <div style={{ display: "flex", gap: "18px" }}>
           <a href="#home" style={navLinkStyle}>
             Home
