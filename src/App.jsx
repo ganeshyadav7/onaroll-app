@@ -149,7 +149,7 @@ function App() {
 
     const encoded = encodeURIComponent(message);
 
-    // Open WhatsApp chat with the order text
+    // Open WhatsApp chat with order text
     window.open(
       `https://wa.me/${WHATSAPP_NUMBER}?text=${encoded}`,
       "_blank"
